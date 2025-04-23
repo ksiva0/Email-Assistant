@@ -75,8 +75,6 @@ Logs are stored in email_processor.log. You can monitor the logs for email proce
 
 ---
 
----
-
 ## Key Files 📄
 
 ### 1. main.py
