@@ -117,11 +117,6 @@ Contributions are welcome! Feel free to open issues or submit pull requests to i
 
 ---
 
-## License 📜
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
 ## Acknowledgments 🙌
 - [Google APIs](https://developers.google.com/)
 - [Slack SDK](https://slack.dev/python-slack-sdk/)
