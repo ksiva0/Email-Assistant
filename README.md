@@ -75,30 +75,6 @@ Logs are stored in email_processor.log. You can monitor the logs for email proce
 
 ---
 
-## Project Structure 📂
-```
-email-assistant/
-├── src/
-│   ├── controllers/
-│   │   └── email_controller.py
-│   ├── services/
-│   │   ├── gmail_service.py
-│   │   ├── gcal_service.py
-│   │   └── slack_service.py
-│   ├── tools/
-│   │   └── calendar_tool.py
-│   ├── utils/
-│   │   └── helper_functions.py
-│   ├── llm/
-│   │   └── llm_service.py
-│   ├── main.py
-├── credentials_gmail.json
-├── credentials_gcal.json
-├── requirements.txt
-├── setup.py
-└── README.md
-```
-
 ---
 
 ## Key Files 📄
