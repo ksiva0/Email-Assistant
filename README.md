@@ -1,57 +1,158 @@
+
 # Email Assistant 📧🤖
 
-**Email Assistant** is a Python-based application designed to automate email management and improve productivity. It integrates with Gmail, Google Calendar, and Slack to fetch emails, generate intelligent replies, and send notifications.
+**Email Assistant** is a Python-based application designed to automate email management, integrate with Google Calendar, and send notifications via Slack. It fetches emails, generates intelligent replies, schedules meetings, and keeps you updated in real-time.
 
+---
 
 ## Features 🌟
-- **Automated Email Replies**: Responds to emails based on their content using custom logic.
+- **Automated Email Replies**: Dynamically generates replies based on email content using AI.
 - **Gmail Integration**: Fetches and processes emails directly from your Gmail inbox.
-- **Google Calendar Support**: Handles scheduling requests and integrates with Google Calendar.
-- **Slack Notifications**: Sends real-time updates to Slack channels for important email events.
-- **Secure Communication**: Uses SSL for secure connections.
+- **Google Calendar Support**: Schedules meetings based on email content.
+- **Slack Notifications**: Sends real-time updates to Slack channels for important events.
+- **Secure Communication**: Uses OAuth2 for secure authentication with Google APIs.
 
+---
 
-## Technologies Used 🛠️
-- **Python**: Core programming language.
-- **Flask**: Web framework for building the application.
-- **Google APIs**: For Gmail and Calendar integration.
-- **Slack SDK**: For sending notifications to Slack.
-- **RotatingFileHandler**: For efficient logging with log rotation.
+## Prerequisites 🛠️
+1. **Python**: Install Python 3.9 or higher.
+2. **Google Cloud Credentials**:
+   - Create credentials for Gmail and Google Calendar APIs in the [Google Cloud Console](https://console.cloud.google.com/).
+   - Download the credentials JSON files and save them as:
+     - credentials_gmail.json
+     - credentials_gcal.json
+3. **Slack Bot Token**:
+   - Create a Slack app and generate a bot token.
+   - Set the `SLACK_BOT_TOKEN` environment variable.
 
+---
 
-## How It Works 💡
-1. **Authenticate**: Log in with your Gmail account to grant access.
-2. **Fetch Emails**: The app retrieves emails from your inbox.
-3. **Analyze Content**: Uses custom logic to analyze email content.
-4. **Generate Replies**: Automatically generates context-aware replies.
-5. **Send Notifications**: Sends updates to Slack for processed emails.
+## Installation 🚀
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/email-assistant.git
+cd email-assistant
+```
 
-## Getting Started 🚀
-1. Clone the repository:
+### 2. Set Up a Virtual Environment
+```bash
+python -m venv myenv
+myenv\Scripts\activate  # On Windows
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set Up Environment Variables
+Create a `.env` file in the root directory and add the following:
+```
+SLACK_BOT_TOKEN=your-slack-bot-token
+```
+
+---
+
+## Usage 🖥️
+
+### 1. Start the Application
+Run the following command to start the Flask application:
+```bash
+python -m src.main
+```
+
+### 2. Authenticate with Gmail
+- Open your browser and navigate to `https://localhost/`.
+- Follow the prompts to authenticate with Gmail.
+
+### 3. Authenticate with Google Calendar
+- Navigate to `https://localhost/gcal_authenticate`.
+- Follow the prompts to authenticate with Google Calendar.
+
+### 4. View Logs
+Logs are stored in email_processor.log. You can monitor the logs for email processing and error details.
+
+---
+
+## Project Structure 📂
+```
+email-assistant/
+├── src/
+│   ├── controllers/
+│   │   └── email_controller.py
+│   ├── services/
+│   │   ├── gmail_service.py
+│   │   ├── gcal_service.py
+│   │   └── slack_service.py
+│   ├── tools/
+│   │   └── calendar_tool.py
+│   ├── utils/
+│   │   └── helper_functions.py
+│   ├── llm/
+│   │   └── llm_service.py
+│   ├── main.py
+├── credentials_gmail.json
+├── credentials_gcal.json
+├── requirements.txt
+├── setup.py
+└── README.md
+```
+
+---
+
+## Key Files 📄
+
+### 1. main.py
+- Entry point for the application.
+- Handles Flask routes for Gmail and Google Calendar authentication.
+
+### 2. gmail_service.py
+- Manages Gmail API integration for fetching and sending emails.
+
+### 3. gcal_service.py
+- Handles Google Calendar API integration for scheduling meetings.
+
+### 4. slack_service.py
+- Sends notifications to Slack channels.
+
+### 5. llm_service.py
+- Generates intelligent email replies using AI.
+
+---
+
+## Deployment 🌐
+
+### Running Locally
+1. Activate your virtual environment:
    ```bash
-   git clone https://github.com/ksiva0/Email-Assistant.git
-   cd email-assistant
+   myenv\Scripts\activate  # On Windows
+   # OR
+   source myenv/bin/activate  # On macOS/Linux
    ```
-2. Install dependencies:
+2. Start the Flask application:
    ```bash
-   pip install -r requirements.txt
+   python -m src.main
    ```
-3. Set up environment variables for Gmail and Slack integration.
-4. Run the application:
-   ```bash
-   python src/main.py
-   ```
+3. Open your browser and navigate to `https://localhost/`.
 
-
-## Future Enhancements 🔮
-- Add support for more email providers (e.g., Outlook, Yahoo).
-- Enhance reply generation using AI/ML models.
-- Add a web-based dashboard for managing email workflows.
-
+---
 
 ## Contributing 🤝
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 
+---
 
-### Let's simplify email management together! 💌
+## License 📜
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Acknowledgments 🙌
+- [Google APIs](https://developers.google.com/)
+- [Slack SDK](https://slack.dev/python-slack-sdk/)
+- [Hugging Face Transformers](https://huggingface.co/transformers/)
+
+---
+
+Let me know if you need further assistance!
