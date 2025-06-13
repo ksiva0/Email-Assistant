@@ -1,8 +1,11 @@
+# src/tools/calendar_tool.py
 import logging
 import sys
 import os
-from src.services import gcal_service, slack_service
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from src.services import gcal_service, slack_service
 
 def schedule_meeting_and_notify(gmail_details, gcal_creds):
     """Schedules a meeting on Google Calendar and notifies on Slack."""
