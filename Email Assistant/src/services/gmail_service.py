@@ -10,7 +10,11 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from flask import url_for, session
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from ..utils.helper_functions import is_automated_email, decode_base64
+
+
 
 SCOPES_GMAIL = ['https://www.googleapis.com/auth/gmail.readonly', 'https://www.googleapis.com/auth/gmail.send']
 CREDENTIALS_FILE_GMAIL = 'credentials_gmail.json'
