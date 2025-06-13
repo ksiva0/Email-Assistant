@@ -1,3 +1,5 @@
+# src/main.py
+
 import os
 import ssl
 import logging
@@ -6,8 +8,9 @@ from flask import Flask, redirect, url_for, session, request
 from .controllers import email_controller
 from .services import gmail_service, gcal_service
 from .services.gmail_service import fetch_emails, get_email_details, send_reply
-from .llm.llm_service import generate_reply
+from .llm.llm_service import generate_reply, is_recent_email
 from .llm.llm_service import REPLY_SUBJECT_PREFIX
+
 
 
 FLASK_PORT = 8501
