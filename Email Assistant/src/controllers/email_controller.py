@@ -1,3 +1,4 @@
+# src/controllers/email_controller.py
 import sqlite3
 import logging
 from flask import redirect, url_for
